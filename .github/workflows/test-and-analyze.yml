@@ -4,7 +4,7 @@ on:
   schedule:
     # Runs every 3 hours - frequent enough to accumulate real flakiness
     # signal within a few days without burning excessive CI minutes.
-    - cron: '0 */3 * * *'
+    - cron: '0 6 * * *'
   workflow_dispatch: {}   # allows manual triggering for demo purposes
   push:
     branches: [main]
