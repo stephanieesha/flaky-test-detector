@@ -1,0 +1,4 @@
+# The analyzer intentionally uses only the Python standard library
+# (json, xml.etree, urllib) - no external dependencies required.
+# This file exists to make that explicit and as a place to add
+# dependencies later (e.g. pandas, matplotlib) for trend visualization.

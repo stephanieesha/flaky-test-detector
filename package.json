@@ -1,0 +1,13 @@
+{
+  "name": "flaky-test-detector",
+  "version": "1.0.0",
+  "description": "Detects and auto-quarantines flaky Playwright tests based on run history.",
+  "scripts": {
+    "test": "playwright test",
+    "test:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.0",
+    "dotenv": "^16.4.5"
+  }
+}

@@ -1,0 +1,69 @@
+name: Run tests, record history, detect flaky tests
+
+on:
+  schedule:
+    # Runs every 3 hours - frequent enough to accumulate real flakiness
+    # signal within a few days without burning excessive CI minutes.
+    - cron: '0 */3 * * *'
+  workflow_dispatch: {}   # allows manual triggering for demo purposes
+  push:
+    branches: [main]
+
+permissions:
+  contents: write   # needed to commit updated history/quarantine back to the repo
+  issues: write      # needed for the analyzer to open flaky-test issues
+
+jobs:
+  test-and-analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20   # generous headroom for repeated Render cold-start waits across the suite
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright tests against live app
+        env:
+          TEST_BASE_URL: ${{ secrets.TEST_BASE_URL }}
+          TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
+          TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+        run: npx playwright test
+        continue-on-error: true   # a failing test shouldn't stop history recording
+
+      - name: Record run results to history
+        run: |
+          python analyzer/record_run.py \
+            --junit results/junit.xml \
+            --history history/test-history.jsonl \
+            --run-id "${{ github.run_id }}"
+
+      - name: Analyze flakiness and update quarantine
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          python analyzer/flakiness_analyzer.py \
+            --history history/test-history.jsonl \
+            --quarantine quarantine.json \
+            --min-runs 5 \
+            --flip-threshold 0.15
+
+      - name: Commit updated history and quarantine list
+        run: |
+          git config user.name "flaky-test-bot"
+          git config user.email "actions@github.com"
+          git add history/test-history.jsonl quarantine.json
+          git diff --staged --quiet || git commit -m "chore: update test history and quarantine list [skip ci]"
+          git push
