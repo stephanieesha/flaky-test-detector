@@ -7,7 +7,11 @@ on:
     - cron: '0 */3 * * *'
   workflow_dispatch: {}   # allows manual triggering for demo purposes
   push:
-    branches: [main]
+    branches: [main]\
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
 
 permissions:
   contents: write   # needed to commit updated history/quarantine back to the repo
@@ -66,4 +70,5 @@ jobs:
           git config user.email "actions@github.com"
           git add history/test-history.jsonl quarantine.json
           git diff --staged --quiet || git commit -m "chore: update test history and quarantine list [skip ci]"
+          git pull --rebase origin main
           git push
