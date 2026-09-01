@@ -1,45 +1,45 @@
 {
-  "generated_at": "2026-08-31T12:35:28.014154+00:00",
+  "generated_at": "2026-09-01T11:02:44.090167+00:00",
   "quarantined_tests": [
     {
       "test_name": "shopping-list.spec.ts > user can log in and reach a category",
-      "total_runs": 5,
-      "pass_count": 4,
+      "total_runs": 6,
+      "pass_count": 5,
       "fail_count": 1,
-      "flip_rate": 0.25,
-      "last_seen": "2026-08-31T12:35:27.920258+00:00"
+      "flip_rate": 0.2,
+      "last_seen": "2026-09-01T11:02:43.992988+00:00"
     },
     {
       "test_name": "shopping-list.spec.ts > add an item to the category",
-      "total_runs": 5,
-      "pass_count": 4,
+      "total_runs": 6,
+      "pass_count": 5,
       "fail_count": 1,
-      "flip_rate": 0.25,
-      "last_seen": "2026-08-31T12:35:27.920258+00:00"
+      "flip_rate": 0.2,
+      "last_seen": "2026-09-01T11:02:43.992988+00:00"
     },
     {
       "test_name": "shopping-list.spec.ts > Editing an item \u203a edit an item [fragile: fixed wait]",
-      "total_runs": 5,
-      "pass_count": 4,
+      "total_runs": 6,
+      "pass_count": 5,
       "fail_count": 1,
-      "flip_rate": 0.25,
-      "last_seen": "2026-08-31T12:35:27.920258+00:00"
+      "flip_rate": 0.2,
+      "last_seen": "2026-09-01T11:02:43.992988+00:00"
     },
     {
       "test_name": "shopping-list.spec.ts > Editing an item \u203a edit an item [robust: condition wait]",
-      "total_runs": 5,
-      "pass_count": 4,
+      "total_runs": 6,
+      "pass_count": 5,
       "fail_count": 1,
-      "flip_rate": 0.25,
-      "last_seen": "2026-08-31T12:35:27.920258+00:00"
+      "flip_rate": 0.2,
+      "last_seen": "2026-09-01T11:02:43.992988+00:00"
     },
     {
       "test_name": "shopping-list.spec.ts > delete an item from the category",
-      "total_runs": 5,
-      "pass_count": 4,
+      "total_runs": 6,
+      "pass_count": 5,
       "fail_count": 1,
-      "flip_rate": 0.25,
-      "last_seen": "2026-08-31T12:35:27.920258+00:00"
+      "flip_rate": 0.2,
+      "last_seen": "2026-09-01T11:02:43.992988+00:00"
     }
   ]
 }
