@@ -1,45 +1,4 @@
 {
-  "generated_at": "2026-09-02T10:32:59.306073+00:00",
-  "quarantined_tests": [
-    {
-      "test_name": "shopping-list.spec.ts > user can log in and reach a category",
-      "total_runs": 7,
-      "pass_count": 6,
-      "fail_count": 1,
-      "flip_rate": 0.167,
-      "last_seen": "2026-09-02T10:32:59.223719+00:00"
-    },
-    {
-      "test_name": "shopping-list.spec.ts > add an item to the category",
-      "total_runs": 7,
-      "pass_count": 6,
-      "fail_count": 1,
-      "flip_rate": 0.167,
-      "last_seen": "2026-09-02T10:32:59.223719+00:00"
-    },
-    {
-      "test_name": "shopping-list.spec.ts > Editing an item \u203a edit an item [fragile: fixed wait]",
-      "total_runs": 7,
-      "pass_count": 6,
-      "fail_count": 1,
-      "flip_rate": 0.167,
-      "last_seen": "2026-09-02T10:32:59.223719+00:00"
-    },
-    {
-      "test_name": "shopping-list.spec.ts > Editing an item \u203a edit an item [robust: condition wait]",
-      "total_runs": 7,
-      "pass_count": 6,
-      "fail_count": 1,
-      "flip_rate": 0.167,
-      "last_seen": "2026-09-02T10:32:59.223719+00:00"
-    },
-    {
-      "test_name": "shopping-list.spec.ts > delete an item from the category",
-      "total_runs": 7,
-      "pass_count": 6,
-      "fail_count": 1,
-      "flip_rate": 0.167,
-      "last_seen": "2026-09-02T10:32:59.223719+00:00"
-    }
-  ]
+  "generated_at": "2026-09-03T10:38:05.688807+00:00",
+  "quarantined_tests": []
 }
