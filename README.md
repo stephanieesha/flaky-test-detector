@@ -1,7 +1,7 @@
-# Flaky Test Detector & Auto-Quarantine System
+# Flaky Test Detector & Auto Quarantine System
 
-Every automation suite eventually accumulates flaky tests — tests that pass
-and fail intermittently against unchanged code. Left alone, they erode trust
+Every automation suite eventually accumulates flaky tests(tests that pass
+and fail intermittently against unchanged code). Left alone, they erode trust
 in the whole suite: people start ignoring red builds, which is worse than
 having no tests at all. Manually tracking which tests are "just flaky" is
 tedious and inconsistent across a team.
@@ -12,7 +12,7 @@ human having to notice the pattern first.
 
 ## Why flip rate, not fail rate
 
-A test that fails 100% of the time isn't flaky — it's broken. A flaky test
+A test that fails 100% of the time isn't flaky, it's broken. A flaky test
 is one whose outcome *changes* between runs on the same code. This project
 computes a **flip rate** per test: the proportion of consecutive run pairs
 where the status changed (pass→fail or fail→pass). A high flip rate with
@@ -61,14 +61,14 @@ currently out of scope - see **Known issues** below.
 
 **Category creation doesn't persist (open bug, app-side).** Clicking
 "Add" on a new category returns `200 OK` from the API, the form closes as
-if it succeeded, but the category never actually appears - confirmed via
+if it succeeded, but the category never actually appears, confirmed via
 a `304 Not Modified` on the subsequent GET request, meaning the underlying
 data genuinely hasn't changed. Root cause not yet isolated (backend code,
 deploy state, and routing were all checked and look correct in isolation).
 Tests currently run against a fixed, pre-existing category
 (`TEST_CATEGORY_NAME`, defaults to `"Test 1"`) rather than creating one
 per run. Category creation/deletion isn't implemented in the current
-Page Object - deliberately out of scope until the bug is fixed, not an
+Page Object, deliberately out of scope until the bug is fixed, not an
 oversight.
 
 `tests/shopping-list.spec.ts` also includes a **fragile vs. robust**
