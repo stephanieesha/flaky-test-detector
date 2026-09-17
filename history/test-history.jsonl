@@ -108,3 +108,8 @@
 {"test_name": "shopping-list.spec.ts > Editing an item \u203a edit an item [fragile: fixed wait]", "status": "passed", "run_id": "35086779462", "timestamp": "2026-09-16T10:48:07.122977+00:00"}
 {"test_name": "shopping-list.spec.ts > Editing an item \u203a edit an item [robust: condition wait]", "status": "passed", "run_id": "35086779462", "timestamp": "2026-09-16T10:48:07.122977+00:00"}
 {"test_name": "shopping-list.spec.ts > delete an item from the category", "status": "passed", "run_id": "35086779462", "timestamp": "2026-09-16T10:48:07.122977+00:00"}
+{"test_name": "shopping-list.spec.ts > user can log in and reach a category", "status": "passed", "run_id": "35212826819", "timestamp": "2026-09-17T10:55:09.859330+00:00"}
+{"test_name": "shopping-list.spec.ts > add an item to the category", "status": "passed", "run_id": "35212826819", "timestamp": "2026-09-17T10:55:09.859330+00:00"}
+{"test_name": "shopping-list.spec.ts > Editing an item \u203a edit an item [fragile: fixed wait]", "status": "passed", "run_id": "35212826819", "timestamp": "2026-09-17T10:55:09.859330+00:00"}
+{"test_name": "shopping-list.spec.ts > Editing an item \u203a edit an item [robust: condition wait]", "status": "passed", "run_id": "35212826819", "timestamp": "2026-09-17T10:55:09.859330+00:00"}
+{"test_name": "shopping-list.spec.ts > delete an item from the category", "status": "passed", "run_id": "35212826819", "timestamp": "2026-09-17T10:55:09.859330+00:00"}
