@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-23T10:58:39.486193+00:00",
+  "generated_at": "2026-10-24T10:14:20.902589+00:00",
   "quarantined_tests": [
     {
       "test_name": "shopping-list.spec.ts > user can log in and reach a category",
-      "total_runs": 59,
-      "pass_count": 47,
+      "total_runs": 60,
+      "pass_count": 48,
       "fail_count": 12,
-      "flip_rate": 0.276,
-      "last_seen": "2026-10-23T10:58:39.415031+00:00"
+      "flip_rate": 0.288,
+      "last_seen": "2026-10-24T10:14:19.715098+00:00"
     }
   ]
 }
